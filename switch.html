@@ -7,6 +7,48 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 		<link href="assets/styles.css" rel="stylesheet">
 		<style>
+		
+		label {
+			display:inline-flex;
+			align-items:center;
+			gap:.25em;
+	
+			cursor:pointer;
+		}
+
+		input {
+			appearance:none;
+			width:5em;
+			aspect-ratio: 2/1;
+			background-color: grey;
+			border-radius: 2em;
+			cursor:pointer;
+			padding: .2rem;
+}
+		input::after {
+			content: "";
+			display:block;
+			width:2em;
+			aspect-ratio:1;
+			background-color: white;
+			border-radius: inherit;
+	
+			transition:.3s;
+		}
+
+		input:checked::after {
+			background-color: white;
+			translate: 2.5em;
+			content: "aan";
+			/* justify-content: center; */
+			align-content: center;
+		}
+		input:checked {
+			background-color: rgb(123, 225, 192);
+			padding: .2rem;
+		}
+			
+			
 			/* Schrijf hier gewoon je CSS voor dit component */
 
 			/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
@@ -17,6 +59,9 @@
 	<body>
 		<h1>Switch control</h1>
 		
+	<label>
+		<input type="checkbox" name="" id="">
+	</label>
 		<!-- Hint: Safari heeft hiervoor iets bedacht, maar is dat al een standaard?
 		     Wat gebeurt er in browsers die dat nog niet ondersteunen? -->
 
