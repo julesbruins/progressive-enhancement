@@ -11,29 +11,24 @@
 	<style>
 		/* Schrijf hier gewoon je CSS voor dit component */
 		input[type="radio"] {
-			display: none;
-		}
-
-
-		input[type="radio"]+label {
-			display: inline-block;
+			appearance: none;
 			width: 3rem;
 			height: 3rem;
 			background-image: url('assets/star.svg');
 			background-size: cover;
 			cursor: pointer;
-
 			&:hover {
 				background-image: url('assets/star-filled.svg');
 			}
 		}
 
-
-		input[type="radio"]:checked+label {
+		input[type="radio"]:checked {
 			background-image: url('assets/star-filled.svg');
 		}
-
-		input[type="radio"]:checked {
+		input[type="radio"]:has(~ :checked) {						
+			background-image: url('assets/star-filled.svg');
+		}
+		input[type="radio"]:has(~ :hover) {						
 			background-image: url('assets/star-filled.svg');
 		}
 
@@ -63,19 +58,19 @@
 	<!-- Waarschijnlijk wil je je rating ooit opslaan, dus heb je een formulier nodig -->
 	<form method="post">
 		<input type="radio" id="star-1" value="1" name="rating"/>
-		<label for="star-1"></label>
+		<label for="star-1" aria-label="1 ster"></label>
 
 		<input type="radio" id="star-2" value="2" name="rating" />
-		<label for="star-2"></label>
+		<label for="star-2" aria-label="2 ster"></label>
 
 		<input type="radio" id="star-3" value="3" name="rating" />
-		<label for="star-3"></label>
+		<label for="star-3" aria-label="3 ster"></label>
 
 		<input type="radio" id="star-4" value="4" name="rating" />
-		<label for="star-4"></label>
+		<label for="star-4" aria-label="4 ster"></label>
 
 		<input type="radio" id="star-5 " value="5" name="rating" />
-		<label for="star-5"></label>
+		<label for="star-5" aria-label="5 ster"></label>
 
 		<!-- Hint: hoeveel verschillende ratings kun je geven? -->
 
